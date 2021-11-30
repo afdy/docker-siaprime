@@ -1,6 +1,6 @@
 FROM debian
 
-ENV VERSION 1.5.3
+ENV VERSION 1.6.0
 
 RUN apt-get update && \
     apt-get install -y wget unzip && \
@@ -12,7 +12,7 @@ RUN apt-get update && \
     rm -rf /tmp/install/ /tmp/install.zip /var/lib/apt/lists
 
 WORKDIR /sp
-EXPOSE 4281 4282 4283 4284
+EXPOSE 4281 4282 4283 4284 4285
 
 # bind api port to all interfaces in case we want to use it, we don't expose it by default.
 CMD ["/usr/local/bin/spd", "--scprime-directory", "./", "--api-addr=0.0.0.0:4280", "--disable-api-security"]
